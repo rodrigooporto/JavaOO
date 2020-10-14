@@ -1,3 +1,4 @@
+package oporto.dominio;
 import java.util.Date;
 
 public class Cliente {
