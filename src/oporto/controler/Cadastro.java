@@ -27,10 +27,21 @@ public class Cadastro {
 
 	public void listarBancos() {
 		if(bancos.isEmpty()) {
-			Util.saidaTexto("Nenhum Banco Cadastrado");
+			Util.saidaTexto("Oh não, nenhum Banco Cadastrado");
 		}else {
 			Util.saidaTexto("Relatório de Bancos Cadastrados\n");
 		}
-		Util.saidaTexto(banco.getNome());
+		for(Banco banco : bancos) {		
+			Util.saidaTexto(bancos.indexOf(banco)+"-"+banco.getNome());
+		}
 	}
+	
+	public void buscarBanco(int codigo) {
+		try {
+			Util.saidaTexto(codigo +"-"+ bancos.get(codigo).getNome());
+		} catch (IndexOutOfBoundsException e) {
+			Util.saidaTexto("Foi buscado um banco inesistente.");
+		}
+	}
+	
 }
