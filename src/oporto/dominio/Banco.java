@@ -1,7 +1,10 @@
 package oporto.dominio;
 
-public abstract class Banco {
+import java.util.List;
+
+public class Banco {
 	private String nome;
+	private List<Agencia> agencias;
 
 	public String getNome() {
 		return nome;
@@ -10,4 +13,12 @@ public abstract class Banco {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	public List<Agencia> getAgencias() {
+		return agencias;
+	}
+
+	public void setAgencias(List<Agencia> agencias) {
+		this.agencias = agencias;
+	}	
 }

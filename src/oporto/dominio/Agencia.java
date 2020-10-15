@@ -1,7 +1,10 @@
 package oporto.dominio;
 
-public class Agencia extends Banco{
-	private String numeroAgencia;
+import java.util.List;
+
+public class Agencia{
+	private String numeroAgencia;	
+	private List<Cliente> clientes;
 
 	public String getNumeroAgencia() {
 		return numeroAgencia;
@@ -10,4 +13,12 @@ public class Agencia extends Banco{
 	public void setNumeroAgencia(String numeroAgencia) {
 		this.numeroAgencia = numeroAgencia;
 	}
+
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}	
 }
