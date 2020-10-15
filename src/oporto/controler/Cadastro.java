@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import oporto.dominio.Agencia;
-import oporto.dominio.Banco;
-import oporto.dominio.Cliente;
+import oporto.modelo.Agencia;
+import oporto.modelo.Banco;
+import oporto.modelo.Cliente;
 import oporto.util.Util;
 
 public class Cadastro {

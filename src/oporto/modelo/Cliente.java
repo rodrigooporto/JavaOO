@@ -1,4 +1,4 @@
-package oporto.dominio;
+package oporto.modelo;
 import java.util.Date;
 
 public class Cliente {
