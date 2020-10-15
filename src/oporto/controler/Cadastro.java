@@ -1,8 +1,12 @@
 package oporto.controler;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+import java.util.zip.DataFormatException;
 
 import oporto.modelo.Agencia;
 import oporto.modelo.Banco;
@@ -51,7 +55,7 @@ public class Cadastro {
 	}	
 
 	public Banco vincularAgenciaAoBanco() {
-		Util.saidaTexto("Entre com o código do banco");
+		Util.saidaTexto("Agora vamos iniciar o processo de vinculação da agência. Entre com o código do banco");
 		codigo = entrada.nextInt();
 		banco = buscaPorCodigoBanco(codigo);
 		//Limpar Buffer
@@ -67,27 +71,38 @@ public class Cadastro {
 			String identificacaoAgencia = entrada.nextLine();
 			agencia = new Agencia();
 			agencia.setIdentificacaoAgencia(identificacaoAgencia);			
-			Util.saidaTexto("Para vincular a agência ao banco agora. Digite 0, ou qualquer outro número para sair.");
-			codigo = entrada.nextInt();
-			banco = vincularAgenciaAoBanco();
-
+			banco = vincularAgenciaAoBanco();			
 			agencia.setBanco(banco);
 			agencias.add(agencia);
 		} else {
 			Util.saidaTexto("É necessário ter um banco cadastrado para cadastrar agências");
 		}
-
 	}
-
 	public void listarAgencia() {
 		if (agencias.isEmpty()) {
 			Util.saidaTexto("Não há nenhuma agência cadastrada.");
 		} else {
-			Util.saidaTexto("Relatório das Agências Cadastradas.");
+			Util.saidaTexto("Relatório das Agências Cadastradas.\n[Banco]-[Código Agência]-[Descrição Agência]");
 		}
 		for (Agencia agencia : agencias) {
 			Util.saidaTexto(agencia.getBanco().getNome() + "-" + agencias.indexOf(agencia) + "-"
 					+ agencia.getIdentificacaoAgencia());
+		}
+	}
+	
+	public void cadastrarCliente() {
+		if(agencias.size() > 0) {
+			Util.saidaTexto("Entre com o nome do Cliente.");
+			String nomeCliente = entrada.nextLine();
+			Util.saidaTexto("Entre com a idade do cliente no formato dd/mm/yyyy");
+			String dataNascimento = entrada.nextLine();			
+					
+			cliente = new Cliente();
+			cliente.setNome(nomeCliente);
+			cliente.setDataNascimento(dataNascimento);
+			
+		}else {
+			Util.saidaTexto("É necessário ter uma agencia antes de cadastrar cliente.");
 		}
 	}
 

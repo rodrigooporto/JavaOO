@@ -3,7 +3,7 @@ import java.util.Date;
 
 public class Cliente {
 	private String nome;
-	private Date dataNascimento;
+	private String dataNascimento;
 	
 	
 	public String getNome() {
@@ -12,10 +12,11 @@ public class Cliente {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}	
+	}
+
 }

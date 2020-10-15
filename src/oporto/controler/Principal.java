@@ -15,7 +15,9 @@ public class Principal {
 					+ "2 - Listar Bancos\n"
 					+ "3 - Buscar Banco por ID \n" 
 					+ "4 - Cadastrar Agência\n"
-					+ "5 - Listar Agência\n");
+					+ "5 - Listar Agência\n"
+					+ "6 - Cadastrar Cliente\n");
+			
 			opcao = Util.entrada.nextInt();
 
 			if (opcao == 1) {
@@ -30,6 +32,8 @@ public class Principal {
 				cadastro.cadastroAgencia();
 			} else if(opcao == 5) {
 				cadastro.listarAgencia();
+			} else if(opcao == 6) {
+				cadastro.cadastrarCliente();
 			}
 			
 		} while (opcao != 0);
