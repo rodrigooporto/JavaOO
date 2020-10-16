@@ -1,9 +1,9 @@
 package oporto.modelo;
-import java.util.Date;
 
 public class Cliente {
 	private String nome;
 	private String dataNascimento;
+	private Agencia agenciaVinculado;
 	
 	
 	public String getNome() {
@@ -18,5 +18,10 @@ public class Cliente {
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-
+	public Agencia getAgenciaVinculado() {
+		return agenciaVinculado;
+	}
+	public void setAgenciaVinculado(Agencia agenciaVinculado) {
+		this.agenciaVinculado = agenciaVinculado;
+	}
 }
