@@ -31,7 +31,7 @@ public class Cadastro {
 		if (bancos.isEmpty()) {
 			Util.saidaTexto("Oh não, nenhum Banco Cadastrado");
 		} else {
-			Util.saidaTexto("Relatório de Bancos Cadastrados\n");
+			Util.saidaTexto("Relatório de Bancos Cadastrados.\n[Código Banco]-[Descrição]");
 		}
 		for (Banco banco : bancos) {
 			Util.saidaTexto(bancos.indexOf(banco) + "-" + banco.getNome());
@@ -77,12 +77,17 @@ public class Cadastro {
 	}
 
 	private Agencia vincularClienteAgencia() {
-		Util.saidaTexto("Vamos iniciar o processo de vinculação do cliente a uma agência. Entre com o código da agência.");
-		codigo = entrada.nextInt();
-		agencia = buscarPorCodigoAgencia(codigo);
-		//Limpar Buffer
-		if(entrada.hasNextLine()) {
-			entrada.nextLine();
+		try {
+			Util.saidaTexto("Vamos iniciar o processo de vinculação do cliente a uma agência. Entre com o código da Agência.");
+			codigo = entrada.nextInt();
+			agencia = buscarPorCodigoAgencia(codigo);
+			//Limpar Buffer
+			if(entrada.hasNextLine()) {
+				entrada.nextLine();
+			}
+			return agencia;
+		} catch (Exception e) {
+			Util.saidaTexto("Foi escolhido um código invalido para agência");
 		}
 		return agencia;
 	}
@@ -133,7 +138,7 @@ public class Cadastro {
 		if(clientes.isEmpty()) {
 			Util.saidaTexto("Não há nunhum cliente cadastrado.");
 		} else {
-			Util.saidaTexto("Relatório dos Clientes Cadastrados.");
+			Util.saidaTexto("Relatório dos Clientes Cadastrados.\\n[Agencia]-[Código Cliente]-[Nome Cliente]");
 		}
 		for(Cliente cliente : clientes) {
 			Util.saidaTexto(cliente.getAgenciaVinculado().getIdentificacaoAgencia() + "-"+clientes.indexOf(cliente) + "-"
