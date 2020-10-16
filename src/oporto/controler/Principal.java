@@ -18,8 +18,7 @@ public class Principal {
 					+ "5 - Listar Agência\n"
 					+ "6 - Buscar Agência por ID\n"
 					+ "7 - Cadastrar Cliente\n"
-					+ "8 - Listar Clientes\n"
-					+ "-----------------\n");
+					+ "8 - Listar Clientes\n");
 			
 			opcao = Util.entrada.nextInt();
 

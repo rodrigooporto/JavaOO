@@ -84,7 +84,7 @@ public class Cadastro {
 		if(entrada.hasNextLine()) {
 			entrada.nextLine();
 		}
-		return null;
+		return agencia;
 	}
 	
 	public void cadastroAgencia() {
@@ -108,6 +108,7 @@ public class Cadastro {
 			String dataNascimento = entrada.nextLine();					
 			cliente = new Cliente();
 			agencia = vincularClienteAgencia();
+			cliente.setAgenciaVinculado(agencia);
 			cliente.setNome(nomeCliente);
 			cliente.setDataNascimento(dataNascimento);	
 			clientes.add(cliente);
