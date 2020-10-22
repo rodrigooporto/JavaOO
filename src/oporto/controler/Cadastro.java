@@ -88,7 +88,7 @@ public class Cadastro {
 			return agencia;
 		} catch (Exception e) {
 			Util.saidaTexto("Foi escolhido um código invalido para agência");
-		}
+		}		
 		return agencia;
 	}
 	
