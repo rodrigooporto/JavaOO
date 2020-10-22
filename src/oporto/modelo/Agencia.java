@@ -24,5 +24,11 @@ public class Agencia{
 	}
 	public void setBanco(Banco banco) {
 		this.bancoVinculado = banco;
+	}
+	@Override
+	public String toString() {
+		return "Agencia [identificacaoAgencia=" + identificacaoAgencia + ", bancoVinculado=" + bancoVinculado
+				+ ", clientes=" + clientes + "]";
 	}	
+	
 }

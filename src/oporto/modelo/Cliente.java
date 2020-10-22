@@ -2,6 +2,7 @@ package oporto.modelo;
 
 public class Cliente {
 	private String nome;
+	//O uso de string aqui foi propositação para evoluçao gradual do modelo
 	private String dataNascimento;
 	private Agencia agenciaVinculado;
 	

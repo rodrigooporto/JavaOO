@@ -21,4 +21,8 @@ public class Banco {
 	public void setAgencias(List<Agencia> agencias) {
 		this.agencias = agencias;
 	}	
+	
+	public String toString() {
+		return this.nome;
+	}
 }

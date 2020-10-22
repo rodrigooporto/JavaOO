@@ -34,7 +34,7 @@ public class Cadastro {
 			Util.saidaTexto("Relatório de Bancos Cadastrados.\n[Código Banco]-[Descrição]");
 		}
 		for (Banco banco : bancos) {
-			Util.saidaTexto(bancos.indexOf(banco) + "-" + banco.getNome());
+			Util.saidaTexto(bancos.indexOf(banco) + "-" + this.banco);
 		}
 	}
 
